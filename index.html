@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en-gb">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+      integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf"
+      crossorigin="anonymous"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="main.css" />
+    <title>To-Do List</title>
+  </head>
+
+  <body>
+    <header>
+      <h1>To-Do List 2023</h1>
+      <form id="new-task-form">
+        <input
+          type="text"
+          id="new-task-input"
+          placeholder="What do you have planned?"
+        />
+        <input type="submit" id="new-task-submit" value="Add task" />
+      </form>
+    </header>
+    <main>
+      <section class="task-list">
+        <h2>Tasks</h2>
+        <div id="tasks">
+          <div class="task">
+            <div class="content">
+              <input type="text" class="text" value="My Task" readonly />
+            </div>
+            <div class="actions">
+              <button class="edit">Edit</button>
+              <button class="delete">Delete</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <script src="main.js"></script>
+  </body>
+</html>
