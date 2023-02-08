@@ -12,11 +12,15 @@ To create a to-do list to help users effectively organise their priorities for t
 N/A
 
 ##Usage
-"[(https://o1ujok3.github.io/of-daily-planner/)]"
+Access the daily planner application here: "[(https://o1ujok3.github.io/of-daily-planner/)]"
 
 Click in the text area of one of the hourly segments to begin inputting events according to that time segment.
 
 Click the save icon at the end of the timeblock to save the task to local storage.
+
+![Alt text](./Screenshot%202023-02-08%20at%2011.45.23.png)
+
+![Alt text](./Screenshot%202023-02-08%20at%2011.45.35.png)
 
 ##Credits
 N/A
