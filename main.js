@@ -14,61 +14,61 @@ var btnObj = {
   "5PM": "5PM-btn",
 };
 
-//function displaying data
-function displayDate() {
+//Function to display data
+function dispDate() {
   var currentDate = moment().format("dddd, MMMM Do");
 
   dataDisplayEl.text(currentDate);
 
-  timeStyling();
+  timeStyle();
 }
 
-//function styling based on past present or future plan
-function timeStyling() {
+//Function to style based on past, present and future plan
+function timeStyle() {
   var currentTime = moment().format("LT");
 
   for (var btn in btnObj) {
     $(`#${btn}`).attr("class", "row past");
 
-    var slicedTime = currentTime.slice(0, -6) + currentTime.slice(-2);
+    var sliTime = currentTime.slice(0, -6) + currentTime.slice(-2);
 
-    if (slicedTime == btn) {
+    if (sliTime == btn) {
       $(`#${btn}`).attr("class", "row present");
       break;
     }
   }
 }
 
-//function to submit user input to local storage
+//Function to store data to local storage
 function submitText() {
-  var toDo = getLocalStorage();
+  var toDoList = getLocalStorage();
 
   var eventID = $(this).attr("id").slice(0, -4);
 
   var textarea = $(`#${eventID}`).val();
 
-  toDo[eventID] = textarea;
+  toDoList[eventID] = textarea;
 
-  localStorage.setItem("toDo", JSON.stringify(toDo));
+  localStorage.setItem("toDoList", JSON.stringify(toDoList));
 
   $(".localStorageContainer").html(`
    <p>Appointment Added to <span class='time-block red-text'>localStorage</span>&#10004</p>
    `);
 }
 
-//function to get data from local storage to populate text area
+//Function to populate text area
 function getLocalStorage() {
-  return JSON.parse(localStorage.getItem("toDo")) || {};
+  return JSON.parse(localStorage.getItem("toDoList")) || {};
 }
 
-//function to load data from local storage onto page
+//Function to load from local storage onto page
 function loadLocalStorage() {
-  var toDo = getLocalStorage();
+  var toDoList = getLocalStorage();
 
-  for (var item in toDo) {
+  for (var item in toDoList) {
     var currentTxtArea = $(`#${item}`);
 
-    currentTxtArea.val(toDo[item]);
+    currentTxtArea.val(toDoList[item]);
   }
 }
 
@@ -86,15 +86,15 @@ function loadPlanner() {
   }
 }
 
-// function to initialise file
+//Function to initialise file
 function init() {
   loadPlanner();
 
   loadLocalStorage();
 
-  timeStyling();
+  timeStyle();
 
-  setInterval(displayDate, 1000);
+  setInterval(dispDate, 1000);
 }
 
 init();
