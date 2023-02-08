@@ -3,25 +3,20 @@
 To create a to-do list to help users effectively organise their priorities for the day.
 
 ##Instructions
-Display the current day at the top of the calendar when a user opens the planner.
-
-Present timeblocks for standard business hours when the user scrolls down.
-
-Color-code each timeblock based on past, present, and future when the timeblock is viewed.
-
-Allow a user to enter an event when they click a timeblock.
-
-Save the event in local storage when the save button is clicked in that timeblock.
-
-Persist events between refreshes of a page.
+•When user enters the site, the working day is organised in hourly segments (9AM-5PM)
+•Hours are colour-coded so hours that have passed are greyed out, the current hour is highlighted red, whereas future hours are coloured green
+•The user can save the event in local storage when the save button is clicked in that timeblock
+•The saved event will be stored to local storage - persisting on the site between refreshes of a page
 
 ##Installation
 N/A
 
 ##Usage
-Access the Daily Planner Application
+"[(https://o1ujok3.github.io/of-daily-planner/)]"
 
-Click in the text area of one of the hourly segments to begin editing the tasks to do during that time. Click the save icon adjacent to the hour you are editing to save the task to local storage.
+Click in the text area of one of the hourly segments to begin inputting events according to that time segment.
+
+Click the save icon at the end of the timeblock to save the task to local storage.
 
 ##Credits
 N/A
