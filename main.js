@@ -1,8 +1,8 @@
-//references to DOM Elements
-var dataDisplayEl = $("#currentDay");
+//Reference to DOM Elements
+var dataDisplay = $("#currentDay");
 var container = $(".container");
 
-var btnObj = {
+var buttonObj = {
   "9AM": "9AM-btn",
   "10AM": "10AM-btn",
   "11AM": "11AM-btn",
@@ -18,7 +18,7 @@ var btnObj = {
 function dispDate() {
   var currentDate = moment().format("dddd, MMMM Do");
 
-  dataDisplayEl.text(currentDate);
+  dataDisplay.text(currentDate);
 
   timeStyle();
 }
@@ -27,7 +27,7 @@ function dispDate() {
 function timeStyle() {
   var currentTime = moment().format("LT");
 
-  for (var btn in btnObj) {
+  for (var btn in buttonObj) {
     $(`#${btn}`).attr("class", "row past");
 
     var sliTime = currentTime.slice(0, -6) + currentTime.slice(-2);
@@ -73,8 +73,8 @@ function loadLocalStorage() {
 }
 
 function loadPlanner() {
-  for (var hour in btnObj) {
-    var currentBtn = btnObj[hour];
+  for (var hour in buttonObj) {
+    var currentBtn = buttonObj[hour];
 
     container.append(`
         <label for="${hour}" class="hour description">${hour}</label>
